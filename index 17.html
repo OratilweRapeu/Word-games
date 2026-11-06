@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Bonolo 💜</title>
+<meta name="theme-color" content="#ddd2f6">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--ink:#3b2a5c;--soft:#6d5a92;--acc:#8a63d9}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(90deg,#ddd2f6,#d3c7fc) fixed;color:var(--ink);font-family:"Nunito",ui-rounded,system-ui,-apple-system,sans-serif;text-align:center;overflow-x:hidden}
+.wrap{max-width:460px;margin:0 auto;padding:36px 18px 48px;position:relative;z-index:1}
+.heart{font-size:56px;animation:beat 1.8s ease-in-out infinite;display:inline-block}
+h1{font-size:40px;margin:6px 0 4px}
+.tag{color:var(--soft);margin:0 0 26px;font-size:16px}
+.quote{background:#fff;border-radius:24px;padding:26px 22px;box-shadow:0 5px 0 rgba(120,90,190,.22);min-height:150px;display:flex;flex-direction:column;justify-content:center}
+.quote p{font-size:21px;line-height:1.45;margin:0;font-weight:700;transition:opacity .3s}
+.btn{display:inline-block;margin-top:16px;padding:13px 24px;border:0;border-radius:16px;background:var(--acc);color:#fff;font-weight:800;font-size:16px;cursor:pointer;font-family:inherit;text-decoration:none;box-shadow:0 4px 0 rgba(90,60,160,.35)}
+.btn.alt{background:#fff;color:var(--ink);box-shadow:0 4px 0 rgba(120,90,190,.22)}
+h2{margin:40px 0 14px;font-size:22px}
+.notes{display:grid;gap:12px;text-align:left}
+.note{background:rgba(255,255,255,.85);border-radius:18px;padding:16px 18px;font-size:16px;line-height:1.45}
+.play{margin-top:36px;background:#fff;border-radius:24px;padding:24px 20px;box-shadow:0 5px 0 rgba(120,90,190,.22)}
+.play h2{margin:0 0 6px}.play p{margin:0;color:var(--soft)}
+footer{margin-top:34px;color:var(--soft);font-size:14px}
+.fl{position:fixed;bottom:-40px;font-size:22px;opacity:.55;animation:up linear forwards;pointer-events:none;z-index:0}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.14)}}
+@keyframes up{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+</style></head>
+<body><div class="wrap">
+<div class="heart">💜</div>
+<h1>Hi, Bonolo</h1>
+<p class="tag">I made a little corner of the internet just for you 🌸</p>
+
+<div class="quote"><p id="q"></p></div>
+<button class="btn" id="nx">Another one 💜</button>
+
+<h2>Little things I want you to know</h2>
+<div class="notes">
+<div class="note">🌷 You are easy to care about, and I'm really glad you're in my life.</div>
+<div class="note">✨ The way you laugh makes everything around you feel lighter.</div>
+<div class="note">🤍 You never have to be perfect with me. You're already more than enough.</div>
+<div class="note">🌙 On the hard days, I hope you remember someone is always cheering for you.</div>
+</div>
+
+<div class="play">
+<h2>Come play with me 🎮</h2>
+<p>I made you some word games, because I know you love them.</p>
+<a class="btn" href="game.html">Play Word Games</a>
+</div>
+
+<footer>Made with love, just for you 💜</footer>
+</div>
+<script>
+const Q=["Bonolo, you make ordinary days feel like my favorite ones.","Your smile is the best part of my day, every single day.","You deserve soft mornings, big laughs, and someone who always chooses you.","Being around you feels like home: warm, safe and full of light.","I hope you know how loved you are, even on the days you forget.","If I could, I would wrap every day of yours in lilac and kindness.","You are the kind of person people are lucky to know. I'm grateful I do.","Whatever today looks like, I'm in your corner."].map(s=>s.replace(/'/g,"\u2019"));
+let i=Math.floor(Math.random()*Q.length);const q=document.getElementById("q");q.textContent=Q[i];
+document.getElementById("nx").onclick=()=>{q.style.opacity=0;setTimeout(()=>{i=(i+1)%Q.length;q.textContent=Q[i];q.style.opacity=1},250)};
+setInterval(()=>{const f=document.createElement("div");f.className="fl";f.textContent=["💜","🌸","✨","🤍"][Math.floor(Math.random()*4)];f.style.left=Math.random()*95+"vw";f.style.animationDuration=(7+Math.random()*6)+"s";document.body.appendChild(f);setTimeout(()=>f.remove(),14000)},1400);
+</script></body></html>
